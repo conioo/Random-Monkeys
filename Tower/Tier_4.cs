@@ -13,7 +13,7 @@ namespace RandomMonkeys.Towers
         public override string BaseTower => TowerType.DartMonkey;
         public override string Description => "Random Tower Tier 4";
 
-        public override int Cost => 11000;
+        public override int Cost => 8000;
         public override int TopPathUpgrades => 0;
         public override int MiddlePathUpgrades => 0;
         public override int BottomPathUpgrades => 0;

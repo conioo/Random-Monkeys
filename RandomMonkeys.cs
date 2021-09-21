@@ -14,7 +14,7 @@ namespace RandomMonkeys
             Bottom
         }
 
-        static private readonly int[] Converter = new int[] { 0, 1, 2, 2, 3, 3, 3, 4, 4, 5 };
+        static private readonly int[] Converter = new int[] { 0, 1, 2, 2, 2, 3, 3, 3, 3, 4, 4, 5 };
 
         static public readonly List<string> AllMonkeys = new List<string>
         {
@@ -111,7 +111,7 @@ namespace RandomMonkeys
 
         static internal TowerModel GetTowerModelAny()
         {
-            return GetTowerModel(Converter[RandomGenerator.Next(10)]);
+            return GetTowerModel(Converter[RandomGenerator.Next(12)]);
         }
     }
 }

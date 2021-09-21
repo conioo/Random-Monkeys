@@ -1,5 +1,8 @@
 ﻿using Assets.Scripts.Simulation.Towers;
+using Assets.Scripts.Models.TowerSets;
+using Assets.Scripts.Simulation.Input;
 using Assets.Scripts.Models;
+using Il2CppSystem.Collections.Generic;
 using BTD_Mod_Helper;
 using MelonLoader;
 using HarmonyLib;
@@ -8,6 +11,8 @@ namespace RandomMonkeys
 {
     class Main : BloonsTD6Mod
     {
+        public override string GithubReleaseURL => "https://api.github.com/repos/GMConio/Random-Monkeys/releases";
+
         public override void OnApplicationStart()
         {
             base.OnApplicationStart();
@@ -19,8 +24,8 @@ namespace RandomMonkeys
         {
             [HarmonyPrefix]
             public static bool Prefix(Tower __instance, ref Model modelToUse)
-            { 
-                
+            {
+
                 if (modelToUse.name.Contains("Tier"))
                 {
 
@@ -55,6 +60,34 @@ namespace RandomMonkeys
 
                 }
 
+                return true;
+            }
+        }
+
+        [HarmonyPatch(typeof(TowerInventory), "Init")]
+        public class TowerInventory_Patch
+        {
+            [HarmonyPrefix]
+            public static bool Prefix(ref List<TowerDetailsModel> allTowersInTheGame)
+            {
+                if(allTowersInTheGame[31].towerId == "BananaFarm")
+                {
+                    var supportMonkeys = allTowersInTheGame.GetRange(31, 11);
+                    allTowersInTheGame.RemoveRange(31, 11);
+
+                    allTowersInTheGame.Add(supportMonkeys[9]);
+                    allTowersInTheGame.Add(supportMonkeys[10]);
+                    allTowersInTheGame.Add(supportMonkeys[6]);
+                    allTowersInTheGame.Add(supportMonkeys[8]);
+                    allTowersInTheGame.Add(supportMonkeys[7]);
+                    allTowersInTheGame.Add(supportMonkeys[5]);
+                    allTowersInTheGame.Add(supportMonkeys[4]);
+
+                    allTowersInTheGame.Add(supportMonkeys[0]);
+                    allTowersInTheGame.Add(supportMonkeys[1]);
+                    allTowersInTheGame.Add(supportMonkeys[2]);
+                    allTowersInTheGame.Add(supportMonkeys[3]);
+                }
                 return true;
             }
         }
