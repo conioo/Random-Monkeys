@@ -11,9 +11,6 @@ using RandomMonkeys.MonkeysRandomGenerator;
 using RandomMonkeys.DefaultOptions;
 using RandomMonkeys.Events;
 
-// dodac zdarzenie do wylaczenia
-// dodac do correctry znaczenie
-
 namespace RandomMonkeys.BloonsMod
 {
     class Main : BloonsTD6Mod
