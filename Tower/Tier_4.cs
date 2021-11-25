@@ -4,16 +4,17 @@ using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
 using UnhollowerBaseLib;
 using RandomMonkeys.Display;
+using RandomMonkeys.DefaultOptions;
 
 namespace RandomMonkeys.Towers
 {
     class Tier_4 : ModTower
     {
         public override string TowerSet => SUPPORT;
-        public override string BaseTower => TowerType.DartMonkey;
+        public override string BaseTower => TowerType.SniperMonkey;
         public override string Description => "Random Tower Tier 4";
 
-        public override int Cost => 8000;
+        public override int Cost => Options.DefaultCostTier_4;
         public override int TopPathUpgrades => 0;
         public override int MiddlePathUpgrades => 0;
         public override int BottomPathUpgrades => 0;

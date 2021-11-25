@@ -8,13 +8,13 @@ using RandomMonkeys.DefaultOptions;
 
 namespace RandomMonkeys.Towers
 {
-    class Tier_2 : ModTower
+    class Tier_AnyLite : ModTower
     {
         public override string TowerSet => SUPPORT;
         public override string BaseTower => TowerType.SniperMonkey;
-        public override string Description => "Random Tower Tier 2";
+        public override string Description => "Random Monkey Tier ?";
 
-        public override int Cost => Options.DefaultCostTier_2;
+        public override int Cost => Options.DefaultCostTierAnyLite;
         public override int TopPathUpgrades => 0;
         public override int MiddlePathUpgrades => 0;
         public override int BottomPathUpgrades => 0;
@@ -31,7 +31,7 @@ namespace RandomMonkeys.Towers
             towerModel.ApplyDisplay<RandomDisplay>();
         }
 
-        public override string Icon => "Tier2-Icon";
-        public override string Portrait => "Tier2-Icon";
+        public override string Icon => "TierAny-Icon";
+        public override string Portrait => "TierAny-Icon";
     }
 }
