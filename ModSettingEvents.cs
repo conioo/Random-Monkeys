@@ -78,7 +78,7 @@ namespace RandomMonkeys.Events
             if (isEnableSeed)
             {
                 GeneratorMonkeys.SetGeneratorSeed();
-                MelonLogger.Msg($"Set seed to : { BloonsMod.Main.Seed }");
+                MelonLogger.Msg($"Set seed to: { BloonsMod.Main.Seed.GetValue() }");
             }
             else
             {
@@ -92,7 +92,7 @@ namespace RandomMonkeys.Events
             if (BloonsMod.Main.EnableSeed)
             {
                 GeneratorMonkeys.SetGeneratorSeed();
-                MelonLogger.Msg($"Set seed to : { BloonsMod.Main.Seed.GetValue() }");
+                MelonLogger.Msg($"Set seed to: { (long)BloonsMod.Main.Seed.GetValue() }");
             }
         };
 
