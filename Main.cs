@@ -230,13 +230,13 @@ namespace RandomMonkeys.BloonsMod
         }
     }
 
-    [HarmonyPatch(typeof(TowerInventory), "Init")]
+   /* [HarmonyPatch(typeof(TowerInventory), "Init")]
     public class TowerInventory_Patch
     {
         [HarmonyPrefix]
         public static bool Prefix(ref List<TowerDetailsModel> allTowersInTheGame)
         {
-            if (Main.EnableMod)
+            if (Main.EnableMod && allTowersInTheGame != null)
             {
                 if (allTowersInTheGame[31].towerId == "BananaFarm" && allTowersInTheGame.Count == 43)
                 {
@@ -258,15 +258,8 @@ namespace RandomMonkeys.BloonsMod
                     allTowersInTheGame.Add(supportMonkeys[3]);
                 }
             }
-            else
-            {
-                if (allTowersInTheGame[31].towerId == "BananaFarm" && allTowersInTheGame.Count == 43)
-                {
-                    allTowersInTheGame.RemoveRange(35, 8);
-                }
-            }
             return true;
         }
-    }
+    }*/
 }
 
